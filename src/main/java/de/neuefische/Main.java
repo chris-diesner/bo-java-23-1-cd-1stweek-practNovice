@@ -5,9 +5,13 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(printMyName());
-        printMyNameInLoop();
-        welcomeOutput();
+        //System.out.println(printMyName());
+        //printMyNameInLoop();
+        //welcomeOutput();
+        //LevelIntermediate.printWeirdNumbersWithModulo();
+        //LevelIntermediate.fillStringArrayWithScanner();
+        //LevelExpert.reverseString();
+        LevelExpert.arraySort();
 
     }
 
