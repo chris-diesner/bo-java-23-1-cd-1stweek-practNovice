@@ -38,34 +38,19 @@ public class LevelExpert {
         return checkSum;
     }
 
-    public static String convertToRome(int num) {
-        char romeChar[] = {'I', 'V', 'X', 'L', 'C'};
-        int tempInt;
-        String rome = "", tempString = "";
-        if (num > 100){
-            rome = "Ich kann nur bis 100";
-            return rome;
-        }
-        for (int i = 0; num > 0; i += 2){
-            tempInt = num % 10;
-            if (tempInt == 4) {
-                tempString += romeChar[i];
-                tempString += romeChar[i + 1];
-            } else if (tempInt == 9) {
-                tempString += romeChar[i];
-                tempString += romeChar[i + 2];
-            } else {
-                if (tempInt >= 5) {
-                    tempString += romeChar[i + 1];
-                    tempInt -= 5;
-                }
-                for (; tempInt > 0; tempInt--) {
-                    tempString += romeChar[i];
-                }
+    private static int[] decValues = {100, 90, 50, 40, 10, 9, 5, 4, 1};
+    private static String[] romeChar = {"C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+
+    public static String convertToRome(int number) {
+
+        StringBuilder s = new StringBuilder();
+
+        for (int i = 0; i < decValues.length; i++) {
+            while (number >= decValues[i]) {
+                number -= decValues[i];
+                s.append(romeChar[i]);
             }
-            num /= 10;
-            rome = tempString + rome;
         }
-        return rome;
+        return s.toString();
     }
 }

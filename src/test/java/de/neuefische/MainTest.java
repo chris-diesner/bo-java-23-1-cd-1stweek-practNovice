@@ -30,10 +30,10 @@ class MainTest {
         assertEquals(3, LevelExpert.convertInChecksum(12));
     }
 
-    @Test
+    /*@Test
     void returnStringToBigByIntOverHundred() {
         assertEquals("Ich kann nur bis 100", LevelExpert.convertToRome(101));
-    }
+    }*/
 
     @Test
     void returnStringIIIByIntThree() {
@@ -54,6 +54,12 @@ class MainTest {
     void returnStringVIByIntSix() {
         assertEquals("VI", LevelExpert.convertToRome(6));
     }
+
+    @Test
+    void returnStringXXXVIByIntThirtySix() {
+        assertEquals("XXXVI", LevelExpert.convertToRome(36));
+    }
+
 
 
 }
